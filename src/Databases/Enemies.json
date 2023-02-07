@@ -1,0 +1,63 @@
+[
+    {
+        "id": 1,
+        "name": "Doppleganger Slime",
+        "img": "/Assets/Enemies/Boss-Doppelganger-Slime.png"
+        
+    
+},
+{
+    "id": 2,
+    "name": "Warrior Skoll",
+    "img": "/Assets/Enemies/Boss-God-Warrior-Skoll.png"
+
+},
+{
+    "id": 3,
+    "name": "Black Wolf",
+    "img": "/Assets/Enemies/Mountain-Black-Wolf.png"
+
+},
+{
+    "id": 4,
+    "name": "Rigel",
+    "img": "/Assets/Enemies/Werewolf-Rigel.png"
+
+},
+{
+    "id": 5,
+    "name": "Knight Dalton",
+    "img": "/Assets/Enemies/Legendary-Knight-Dalton.png"
+
+},
+{
+    "id": 6,
+    "name": "Knight Serat",
+    "img": "/Assets/Enemies/Legendary-Knight-Serat.png"
+
+},
+{
+    "id": 7,
+    "name": "E'tervise",
+    "img": "/Assets/Enemies/Boss-Dragon-Huanglong.png"
+
+},
+{
+    "id": 8,
+    "name": "Hades",
+    "img": "/Assets/Enemies/Boss-Hades.png"
+
+},
+{
+    "id": 9,
+    "name": "Skull Knight Xoer",
+    "img": "/Assets/Enemies/Skull-Knight-Xoer.png"
+
+},
+{
+    "id": 10,
+    "name": "Darkness Titan Ilnoct",
+    "img": "/Assets/Enemies/Boss-Darkness-Titan-Ilnoct.png"
+
+}
+]
