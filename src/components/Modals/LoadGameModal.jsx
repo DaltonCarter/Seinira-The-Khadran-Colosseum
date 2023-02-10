@@ -82,6 +82,7 @@ const Backdrop = () => {
     const handleNewGame = () => {
       if(saveFiles.length === 0){
         navigate('/Start')
+        setTimeout(() => {window.location.reload()}, 500) 
         
       }else{
         setWarning(true)
@@ -90,8 +91,8 @@ const Backdrop = () => {
     }
 
     const handleProceed = () => {
-      window.location.reload()
-      setTimeout(() => {navigate('/Start')}, 500) 
+      navigate('/Start')
+      setTimeout(() => {window.location.reload()}, 500) 
     }
 
     return(

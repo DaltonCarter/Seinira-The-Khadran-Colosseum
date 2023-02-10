@@ -335,7 +335,7 @@ useEffect(() => {
 // End of Battle Result handling ^^^^^^^^^^^^^^^^
   return (
     <div className=' bg-no-repeat Battle-Background bg-cover'>
-        <div   id='enemy-container'>
+        <div  className=' flex justify-center items-center' id='enemy-container' >
             {enemy !== undefined && <div>
                 <div className='flex flex-col justify-center items-center text-center border-8 border-double border-black w-56 h-56 rounded-lg shadow-xl bg-red-500'>
                 <h1 className='text-2xl font-bold underline'>{enemy.name}</h1>
@@ -344,7 +344,7 @@ useEffect(() => {
                 <h1 className='text-2xl font-bold underline'>Def: {enemy.def}</h1>
                 <h1 className='text-2xl font-bold underline'>Agi: {enemy.agi}</h1>
                 </div>
-                 <img className='h-96 fixed inset-x-2/4 inset-y-2/4' src={enemy.img}/>
+                 <img className='battler object-contain resize' src={enemy.img}/>
             </div>
 }  
         </div>
