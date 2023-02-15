@@ -1,6 +1,39 @@
-# Getting Started with Create React App
+# Seinira: The Khadran Colosseum
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This Project is the Functioning Framework for a classic JRPG style game, modled after Final Fantasy and Dragon Quest, and was made as my Solo Full Stack Capstone project for my React.js Web Development program.
+
+## Terms of Use/Service:
+I will keep this brief, You are aknowledging that all of the code present belongs to myself, and under no circumstances are you to claim it as your own in anyway. All graphics present are used under Official Liscenses both free and purchased. You are NOT allowed to copy, rip, redistribute, or edit any part of these graphics or code. Links to where you may get legal access to the Graphics and images used can be found both on the Credits page of the application, and the bottom of this README under the CREDITS Heading.
+
+# Technologies Used:
+
+## This project was Created using the following technologies:
+
+
+### For the Front-End, and styling:
+
+<img alt='React.js' width='100' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" /> 
+<img alt='CSS3' width='100' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" />
+<img alt='Tailwind Css' width='100' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg" />  
+
+
+### Back-End Server and Server Functionality Constructed with:
+
+<img alt='Node.js' width='100' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg" />
+ <img alt='JavaScript' width='100' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />          
+<img alt='Express.js' width='100' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original-wordmark.svg" />
+
+#### Including: Axios and CORS for handling API requests. JSON Web Token for Authentication of logins, and finally BCrypt.JS for password Hashing
+
+### Login, and Save Data managed with:
+
+ <img alt='Sequelize'  width='100' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sequelize/sequelize-original-wordmark.svg" />     
+<img alt='Postgres SQL'  width='100' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg" /> 
+
+#### Database hosted on Bit.Io
+
+### Graphical editing done using:
+ <img alt='Adobe Photoshop' width='100' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-line.svg" />
 
 ## Available Scripts
 
