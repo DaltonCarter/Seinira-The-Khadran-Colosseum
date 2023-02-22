@@ -24,20 +24,21 @@ I will keep this brief, You are aknowledging that all of the code present belong
 ### Back-End Server and Server Functionality Constructed with:
 
 <img alt='Node.js' width='100' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain-wordmark.svg"  />
- <img alt='JavaScript' width='100' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />          
-<img alt='Express.js' width='100' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original-wordmark.svg" />
+<img alt='JavaScript' width='100' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" /> 
 
-#### Including: Axios and CORS for handling API requests. JSON Web Token for Authentication of logins, and finally BCrypt.JS for password Hashing
+
+
+#### Including: Axios, Express.js and CORS for handling API requests. JSON Web Token for Authentication of logins, and finally BCrypt.JS for password Hashing
 
 ### Login, and Save Data managed with:
 
- <img alt='Sequelize'  width='100' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sequelize/sequelize-original-wordmark.svg" />     
+<img alt='Sequelize'  width='100' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sequelize/sequelize-original-wordmark.svg" />     
 <img alt='Postgres SQL'  width='100' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-plain-wordmark.svg" /> 
 
 #### Database hosted on Bit.Io
 
 ### Graphical editing done using:
- <img alt='Adobe Photoshop' width='100' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-line.svg" />
+<img alt='Adobe Photoshop' width='100' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-line.svg" />
 
 ## In Depth Feature Walkthrough:
 
@@ -166,4 +167,18 @@ In this section I will go through and give an exhaustive account of everything i
 #### The Store:
 
 >The Store is accessed by either clicking the Store Button or pressing the "W" key, this will open a full screen modal, that you can close by using the "Close" button or simply pressing "W" again. just like with the Menu pressing "W" will terminate ALL Shop related U.I.
-> The store is where the user can spend their hard earned reward money on Items and New Equipment, or else Sell unwanted items and equipment. The U.I here is straight forward the User selects either buy or sell, and then selects Items or Equipment.
+>
+> The store is where the user can spend their hard earned reward money on Items and New Equipment, or else Sell unwanted items and equipment. The U.I here is straight forward the User selects either buy or sell, and then selects Items or Equipment. When Buying each display card will contain the Name, Description, and price of the Item or equipment, and a buy button. When Selling it is almost identical exepts the the amount the player owns is also included, and obviously the BUY button now says SELL.
+>
+> Currently Each time you click the Buy/Sell button on the display card a single item/equipment will be added to or subtracted from your inventory at a time. In the event that you sell ALL of an item in your possession it's card will be removed from the display, and the entry totally removed from your inventory, and the price/Sale Price will be subtracted from or added to your player wallet.
+
+#### Character:
+
+> The Character, and all realated information is Located in a Context store. It contains the Player Object, the Equipment Slot states, and all the functions to handle level up.
+>
+> The Chracter Object holds the Name, and Base attributes of the character.
+> The Level and Experience values are stored on state in the context
+>
+> Whenever The player gains Experience from a battle a series of Functions controlled by Use Effectr run to update the Current Exp value, and then check it against the Ammount Needed for next level. If the Current Exp value exceeds the amount needed for next level a Level up function is run which subtracts the Needed Exp from the current value, Updates The playes level value, Increases each base stat by a random number between 0 and 30 for HP and 0 and 10 for everything else, generates a new target Experience amount by adding the previous amount to a random number between 0 and 200 plus 100, updates all of the states for use.
+>
+> Also contained in this Context is the function that runs at the beginning of the game, and every time you change your equipment, or level that calculates your total stats and saves it to state, for use by the battle system and Stat Display.
