@@ -4,7 +4,7 @@ This Project is the Functioning Framework for a classic JRPG style game, modled 
 
 Here is a link to the demo video on youtube, it is quite long a shorter one will be uploaded soon: 
 
-<a src="https://youtu.be/Is7r2OM0U6w">Seinira: The Khadran Colosseum</a>
+<a href='https://youtu.be/Is7r2OM0U6w'>Seinira: The Khadran Colosseum</a>
 
 ## Technical Summary:
 
