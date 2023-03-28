@@ -2,6 +2,8 @@
 
 This Project is the Functioning Framework for a classic JRPG style game, modled after Final Fantasy and Dragon Quest, and was made as my Solo Full Stack Capstone project for my React.js Web Development program.
 
+Here is a link to the demo video on youtube, it is quite long a shorter one will be uploaded soon: <a src="https://youtu.be/Is7r2OM0U6w">Seinira: The Khadran Colosseum</a>
+
 ## Technical Summary:
 
 This full-Stack S.P.A was made using React.js, using React router DOM for navigation, and a combination of CSS3 and Tailwind CSS for styling, it is backed by a REST API that is accessed using AXIOS for the HTTPS requests, Express.js for the routing, and CORS to handle complex resource sharing, Sequelize is used to structure user data, I.E Username, password, and Character Data in the back-end so it can be saved to an external PostgreSQL database for use when loging in or loading a save file.
@@ -74,7 +76,7 @@ In this section I will go through and give an exhaustive account of everything i
 >
 > Upon arriving on this view an Axios request is automatically made to the server to search the Database for any save files associated with your user id, and then display SIX of them in decending order so that your most recent save is first. ***If no save files are present nothing will be displayed.***
 >
->As for the save files themselves these display your Characters; Name, Level, Current Exp/Exp to Next level and the option to either load or delete that file. If Delete is selected the Save File Id is then sent with an Axios request, which queries the Database and deletes the appropriate file. The selection is then removed from your screen, and if there is an undisplayed save file present it will then be displayed at the end of the list. When you choose to load a file, the file id is sent to the server which queries the database for that file, then parses the information into something JavaScript can read, and is sent to the front end where it is loaded into the appropriate Context States, and finally you are routed to the Game Map screen.
+> As for the save files themselves these display your Characters; Name, Level, Current Exp/Exp to Next level and the option to either load or delete that file. If Delete is selected the Save File Id is then sent with an Axios request, which queries the Database and deletes the appropriate file. The selection is then removed from your screen, and if there is an undisplayed save file present it will then be displayed at the end of the list. When you choose to load a file, the file id is sent to the server which queries the database for that file, then parses the information into something JavaScript can read, and is sent to the front end where it is loaded into the appropriate Context States, and finally you are routed to the Game Map screen.
 
 #### The Game Start Screen:
 
@@ -197,22 +199,22 @@ In this section I will go through and give an exhaustive account of everything i
 >
 > ##### The Difficulty:
 >
-> As I mentioned I had alot of trouble getting this seemingly direct and to the point system working properly, when fleshing it out to handle objects instead of plain number values it took a lot of expimentation of different ways to detect the entries: I went through .filter(), .findIndex(), etc... before I found the one that worked .find(). After that I then needed to find the way to quickly and smoothly single it out and update it's amount attribute, I again ran the same marathon of methods, this time the one that Succeeded was .indexOf(). Once that headache was out of the wayI then went through two different ways of updating the attribute, before I found the one that actually worked. The first two would only update the attribute ONCE so you're inventory would go from One to Two and STAY THERE FOR ALL ETERNITY. After beating my head against my desk for nearly a week on these issues, because All three of these problems were concurrent, I decided the answer was to break down the updating process even more. So the final sequence was that I accessed the Inventory array at the index of the existing item, updated the amount, and then, spread the updated inventory to state. Previously I had been trying to update the attribute as a part of saving to state, I discovered that doing this causes the State to not set correctly, and thus not update.
+> As I mentioned I had alot of trouble getting this seemingly direct and to the point system working properly, when fleshing it out to handle objects instead of plain number values it took a lot of experimentation of different ways to detect the entries: I went through .filter(), .findIndex(), etc... before I found the one that worked .find(). After that I then needed to find the way to quickly and smoothly single it out and update it's amount attribute, I again ran the same marathon of methods, this time the one that Succeeded was .indexOf(). Once that headache was out of the wayI then went through two different ways of updating the attribute, before I found the one that actually worked. The first two would only update the attribute ONCE so you're inventory would go from One to Two and STAY THERE FOR ALL ETERNITY. After beating my head against my desk for nearly a week on these issues, because All three of these problems were concurrent, I decided the answer was to break down the updating process even more. So the final sequence was that I accessed the Inventory array at the index of the existing item, updated the amount, and then, spread the updated inventory to state. Previously I had been trying to update the attribute as a part of saving to state, I discovered that doing this causes the State to not set correctly, and thus not update.
 >
 > With that problem solved it was a simple matter to apply it to the equipment function, and then reverse engineer it for the remove functions. I also discovered a seperate issue when designing the Equip Scene, when trying to unequip and existing equipment and equip the new one at the same time would confuse the context, and result in only half of both the add and remove functions running. This issue was fixed by making use of use Effect to control when the second half of the swapping equipment process would execute.
 >
->Those two problems combined made for a week and a half long migrain.
+> Those two problems combined made for a week and a half long migrain.
 
 #### The Authentication:
 
 > Truthfully this Auth system was one I had made as a part of a unit project, and it fit my need, all it takes is a unique User name, because it will query the database to see if that user name is taken, and a password. Once That is done Bcrypt hashes the password, a logout timer for two days is generated, and then the timer, username, and hashed password are saved to the database where you are given a user ID. Then JSON Web Token generates a Auth token for you, which is then saved to Local Storage along with the Log out timer, and your user id.
 >
-> When Logging in the user name and password are sent to the server where a query takes place to retrieve your information. If the User name is correct the function will then Run the provided password through BCrypts comparison method to see if it matches the hashed password, if the comparison is successful a Token is generated and your timer is updated. if the two days has elapsed an new timer is set. 
+> When Logging in the user name and password are sent to the server where a query takes place to retrieve your information. If the User name is correct the function will then Run the provided password through BCrypts comparison method to see if it matches the hashed password, if the comparison is successful a Token is generated and your timer is updated. If the two days has elapsed an new timer is set. 
 
 #### The Save/Load System:
 
 > I covered a lot of this in the Main Menu portion, but now that we have covered all of the pertinent features, I can better explain this.
-> Originally I wanted to just be able to just save arrays, to the database, but as it turns out that was WAY more Complex than I had time to mess with. So thnaks to one of my Cohort members, I was able to find another way of handling the data through the JSON.Stringify and JSON.Parse methods.
+> Originally I wanted to just be able to just save arrays, to the database, but as it turns out that was WAY more Complex than I had time to mess with. So thanks to one of my Cohort members, I was able to find another way of handling the data through the JSON.Stringify and JSON.Parse methods.
 >
 > When you click the Save button on the save modal, the game takes the following information from context state; The Character object, The existing EXP values, Level, all of the equipment states, the wallet, and all three of the Inventories Bundles them up and ships them off to the server through Axios, where the character Object, and inventories are run through JSON.Stringify and saved to new variables, and The Equipment states are reduced to the ID number associated with the equipment. Once that is complete all of the new variables are then organised and bundled up again this time in the Sequelize (PostgreSQL Dilect) data model present on the server, and saved to the external database where the file is tied to the ID associated with the current log in.
 >
@@ -228,7 +230,7 @@ In this section I will go through and give an exhaustive account of everything i
 >
 > ##### Known Issues:
 > First and foremost this battle system is not very well paced, for example if the enemy goes first you will take damage as soon as initative is decided this can lead to instant knock outs if you are not careful.
->Secondly the styling and reactive design of this app is still a work in progress, right now support for resolutions between 1920 x 1080 and 2560 x 1440 is avaliable. anything smaller or bigger than that will result in the graphics being displaced. 
+> Secondly the styling and reactive design of this app is still a work in progress, right now support for resolutions between 1920 x 1080 and 2560 x 1440 is avaliable. anything smaller or bigger than that will result in the graphics being displaced. 
 > ***I am actively working on fixing this.***
 >
 > ##### Enemy Generation:
