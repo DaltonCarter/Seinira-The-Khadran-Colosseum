@@ -2,7 +2,9 @@
 
 This Project is the Functioning Framework for a classic JRPG style game, modled after Final Fantasy and Dragon Quest, and was made as my Solo Full Stack Capstone project for my React.js Web Development program.
 
-Here is a link to the demo video on youtube, it is quite long a shorter one will be uploaded soon: <a src="https://youtu.be/Is7r2OM0U6w">Seinira: The Khadran Colosseum</a>
+Here is a link to the demo video on youtube, it is quite long a shorter one will be uploaded soon: 
+
+<a src="https://youtu.be/Is7r2OM0U6w">Seinira: The Khadran Colosseum</a>
 
 ## Technical Summary:
 
